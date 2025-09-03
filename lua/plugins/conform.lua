@@ -65,7 +65,7 @@ return {
         },
         prettier = {
           command = "prettier",
-          args = { "--stdin-filepath", "$FILENAME", "--config", vim.fn.getcwd() .. "/.prettierrc" },
+          args = { "--stdin-filepath", "$FILENAME" },
           stdin = true,
           condition = function()
             local configs = {
@@ -73,6 +73,7 @@ return {
               ".prettierrc.json",
               ".prettierrc.js",
               "prettier.config.js",
+              "prettier.config.mjs",
               ".prettierrc.yaml",
               ".prettierrc.yml",
               "package.json", -- fallback, check if it contains a "prettier" key
